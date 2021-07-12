@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import GeneralInfo from './components/GeneralInfo';
+import './styles/App.css';
 
 class App extends Component {
   constructor(props) {
@@ -7,7 +9,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>Hello World!!</div>
+      <div className="screen-color">
+        <GeneralInfo />
+      </div>
     );
   }
 }
