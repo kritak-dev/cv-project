@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/GeneralInfo.css';
+//import '../styles/GeneralInfo.css';
 
 class GeneralInfo extends Component {
     constructor(props) {
@@ -46,16 +46,21 @@ class GeneralInfo extends Component {
 
         const generalInfoForm = (
             <form onSubmit={ this.handleSubmit }>
-                <input type="text"   name="firstName"   placeholder="First Name"   value={ firstName }   onChange={ this.handleChange } />
-                <br />
-                <input type="text"   name="lastName"    placeholder="Last Name"    value={ lastName }    onChange={ this.handleChange } />
-                <br />
-                <input type="email"  name="email"       placeholder="Email"        value={ email }       onChange={ this.handleChange } />
-                <br />
-                <input type="number" name="phoneNumber" placeholder="Phone Number" value={ phoneNumber } onChange={ this.handleChange } />
-                <br />
-                <input type="text"   name="linkedin"    placeholder="Linkedin"     value={ linkedin }    onChange={ this.handleChange } />
-                <br />
+                <label htmlFor="fname">
+                    <input id="fname" type="text"   name="firstName"   value={ firstName }   onChange={ this.handleChange } required />
+                </label>
+                <label htmlFor="lname">
+                    <input id="lname" type="text"   name="lastName"    value={ lastName }    onChange={ this.handleChange } required />
+                </label>
+                <label htmlFor="email">
+                    <input id="email" type="email"  name="email"       value={ email }       onChange={ this.handleChange } required />
+                </label>
+                <label htmlFor="mobile">
+                    <input id="mobile" type="tel"    name="phoneNumber" value={ phoneNumber } onChange={ this.handleChange } required />
+                </label>
+                <label htmlFor="linkedin">
+                    <input id="linkedin" type="text"   name="linkedin"    value={ linkedin }    onChange={ this.handleChange } />
+                </label>
                 <button type="submit">Submit</button>
             </form>
         );
@@ -66,7 +71,7 @@ class GeneralInfo extends Component {
                     <h2 className="pad-right-5px">{firstName}</h2>
                     <h2 className="pad-left-5px">{lastName}</h2>
                 </div>
-                <div class="disp-flex">
+                <div className="disp-flex">
                     <p>{email}</p>
                     <p>{phoneNumber}</p>
                     <p>{linkedin}</p>
@@ -79,6 +84,7 @@ class GeneralInfo extends Component {
 
         return (
             <div className="general-box">
+                <h2>General Information</h2>
                 { displayDiv }
             </div>
         )

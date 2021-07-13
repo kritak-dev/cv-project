@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GeneralInfo from './components/GeneralInfo';
+import EducationList from './components/EducationList';
 import './styles/App.css';
 
 class App extends Component {
@@ -9,8 +10,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="screen-color">
+      <div>
         <GeneralInfo />
+        <EducationList />
       </div>
     );
   }
