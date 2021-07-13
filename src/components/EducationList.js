@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AddEducationForm from './AddEducationForm';
 import AddButton from './AddButton';
-import DisplayEducation from './DisplayEducation';
+import DisplayEditEducation from './DisplayEditEducation';
 
 class EducationList extends Component {
     constructor(props) {
@@ -14,6 +14,8 @@ class EducationList extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleAddButton = this.handleAddButton.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleSubmit(edu) {
@@ -29,15 +31,35 @@ class EducationList extends Component {
         });
     }
 
+    handleEdit(editedEdu) {
+        const newEduList = this.state.eduList.map(edu => {
+            if (edu.id !== editedEdu) return edu;
+            return editedEdu;
+        });
+
+        this.setState({
+            eduList: newEduList,
+        });
+    }
+
+    handleDelete(removeId) {
+        const newEduList = this.state.eduList.filter(edu => edu.id !== removeId)
+        this.setState({
+            eduList: newEduList,
+        });
+    }
+
     render() {
         const { eduList, openAddForm } = this.state;
 
         const displayEduList = eduList.map(edu => {
-            return(<DisplayEducation 
-                institute={edu.institute}
-                degree={edu.degree}
+            return(<DisplayEditEducation 
+                instituteName={edu.institute}
+                degreeName={edu.degree}
                 id={edu.id}
                 key={edu.id}
+                handleEdit={this.handleEdit}
+                handleDelete={this.handleDelete}
             />);
         });
 

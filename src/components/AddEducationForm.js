@@ -30,13 +30,6 @@ class AddEducationForm extends Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.handleSubmit(this.state.edu);
-        this.setState({
-            edu: {
-                institute: '',
-                degree: '',
-                id: uniqid(),
-            },
-        });
     }
 
     render() {
