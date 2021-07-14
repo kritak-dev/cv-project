@@ -54,7 +54,7 @@ class DisplayEditEducation extends Component {
     }
 
     render() {
-        const { instituteName, degreeName, id } = this.props;
+        const { instituteName, degreeName } = this.props;
         const { institute, degree } = this.state.edu;
         const { isEditMode } = this.state;
 

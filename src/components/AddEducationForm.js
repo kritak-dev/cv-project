@@ -34,7 +34,7 @@ class AddEducationForm extends Component {
 
     render() {
 
-        const { institute, degree } = this.state;
+        const { institute, degree } = this.state.edu;
 
         const educationForm = (
             <form onSubmit={this.handleSubmit}>
