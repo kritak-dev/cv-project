@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../App.css';
 
 class DisplayEditWorkXp extends Component {
     constructor(props) {
@@ -69,12 +70,10 @@ class DisplayEditWorkXp extends Component {
 
         const editTemplate = (
            <form onSubmit={this.handleSubmit}>
-                <label htmlFor="company">
-                    Company: <input id="company" type="text" name="company" value={company} onChange={this.handleChange} required />
-                </label>
-                <label htmlFor="designation">
-                    Designation: <input id="designation" type="text" name="designation" value={designation} onChange={this.handleChange} required />
-                </label>
+               <div>
+                    <input id="company" type="text" name="company" value={company} onChange={this.handleChange} required />
+                    <input id="designation" type="text" name="designation" value={designation} onChange={this.handleChange} required />
+                </div>
                 {/*<label htmlFor="startDate">
                     From: <input id="startDate" type="date" name="from" value={from} onChange={this.handleChange} required />
                 </label>

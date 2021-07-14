@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../App.css';
+import '../styles/Education.css';
 
 class DisplayEditEducation extends Component {
     constructor(props) {
@@ -60,29 +62,27 @@ class DisplayEditEducation extends Component {
 
         const displayTemplate = (
             <div>
-                <p>Institute: { instituteName }</p>
-                <p>Degree: { degreeName }</p>
-                <button onClick={this.handleEdit}>Edit</button>
-                <button onClick={this.handleDelete}>Delete</button>
+                <div>
+                    <p>Institute: { instituteName }</p>
+                    <p>Degree: { degreeName }</p>
+                </div>
+                <button className="mr-5" onClick={this.handleEdit}>Edit</button>
+                <button className="ml-5" onClick={this.handleDelete}>Delete</button>
             </div>
         );
 
         const editTemplate = (
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    Institute:
-                    <input id="institute" name="institute" value={institute} onChange={this.handleChange} />
-                </label>
-                <label htmlFor="degree">
-                    Degree:
-                    <input id="degree" name="degree" value={degree} onChange={this.handleChange} />
-                </label>
+                <div>
+                    <input id="institute" type="text" name="institute" value={institute} onChange={this.handleChange} />
+                    <input id="degree" type="text" name="degree" value={degree} onChange={this.handleChange} />
+                </div>
                 <button type="submit">Submit</button>
             </form>
         );
 
         return (
-            <div>
+            <div className="m-10">
                 {isEditMode ? editTemplate : displayTemplate }
             </div>
         );

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-//import '../styles/GeneralInfo.css';
+import '../App.css';
 
 class GeneralInfo extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            firstName: 'FirstName',
-            lastName: 'LastName',
-            email: 'user@gmail.com',
-            phoneNumber: 9454327643,
-            linkedin: 'linkedin',
+            firstName: '',
+            lastName: '',
+            email: '',
+            phoneNumber: '',
+            linkedin: '',
             isEditing: true,
         }
 
@@ -46,32 +46,21 @@ class GeneralInfo extends Component {
 
         const generalInfoForm = (
             <form onSubmit={ this.handleSubmit }>
-                <label htmlFor="fname">
-                    <input id="fname" type="text"   name="firstName"   value={ firstName }   onChange={ this.handleChange } required />
-                </label>
-                <label htmlFor="lname">
-                    <input id="lname" type="text"   name="lastName"    value={ lastName }    onChange={ this.handleChange } required />
-                </label>
-                <label htmlFor="email">
-                    <input id="email" type="email"  name="email"       value={ email }       onChange={ this.handleChange } required />
-                </label>
-                <label htmlFor="mobile">
-                    <input id="mobile" type="tel"    name="phoneNumber" value={ phoneNumber } onChange={ this.handleChange } required />
-                </label>
-                <label htmlFor="linkedin">
-                    <input id="linkedin" type="text"   name="linkedin"    value={ linkedin }    onChange={ this.handleChange } />
-                </label>
-                <button type="submit">Submit</button>
+                <div>
+                    <input id="fname" type="text"   name="firstName"   value={ firstName }   onChange={ this.handleChange } placeholder="firstname" />
+                    <input id="lname" type="text"   name="lastName"    value={ lastName }    onChange={ this.handleChange } placeholder="lastname" />
+                    <input id="email" type="email"  name="email"       value={ email }       onChange={ this.handleChange } placeholder="email" />
+                    <input id="mobile" type="tel"    name="phoneNumber" value={ phoneNumber } onChange={ this.handleChange } placeholder="mobile" />
+                    <input id="linkedin" type="text"   name="linkedin"    value={ linkedin }    onChange={ this.handleChange } placeholder="linkedin" />
+                </div>
+                <button type="submit" className="button-style">Submit</button>
             </form>
         );
 
         const generalDetails = (
-            <div className="font-cursive">
-                <div className="add-flex">
-                    <h2 className="pad-right-5px">{firstName}</h2>
-                    <h2 className="pad-left-5px">{lastName}</h2>
-                </div>
-                <div className="disp-flex">
+            <div>
+                <h2>{firstName} {lastName}</h2>
+                <div>
                     <p>{email}</p>
                     <p>{phoneNumber}</p>
                     <p>{linkedin}</p>
@@ -83,7 +72,7 @@ class GeneralInfo extends Component {
         const displayDiv = isEditing ? generalInfoForm : generalDetails;
 
         return (
-            <div className="general-box">
+            <div className="align-center">
                 <h2>General Information</h2>
                 { displayDiv }
             </div>

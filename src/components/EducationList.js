@@ -64,10 +64,11 @@ class EducationList extends Component {
         });
 
         return(
-            <div>
+            <div className='align-center'>
+                <h2>Educational Qualifications</h2>
                 {displayEduList}
                 { !openAddForm ? 
-                    <AddButton handleAddButton={this.handleAddButton} /> : <AddEducationForm handleSubmit={this.handleSubmit}/>
+                    <AddButton title="Add Education" handleAddButton={this.handleAddButton} /> : <AddEducationForm handleSubmit={this.handleSubmit}/>
                 }
             </div>
         );

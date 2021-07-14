@@ -13,7 +13,7 @@ class AddButton extends Component {
 
     render() {
         return (
-            <button onClick={this.handleClick}>Add</button>
+            <button onClick={this.handleClick}>{this.props.title}</button>
         );
     }
 }

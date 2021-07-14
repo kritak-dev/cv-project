@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uniqid from 'uniqid';
+import '../App.css';
 
 class AddEducationForm extends Component {
     constructor(props) {
@@ -38,14 +39,10 @@ class AddEducationForm extends Component {
 
         const educationForm = (
             <form onSubmit={this.handleSubmit}>
-                <label htmlFor="institute">
-                    Institute:
-                    <input id="institute" name="institute" value={institute} onChange={this.handleChange} />
-                </label>
-                <label htmlFor="degree">
-                    Degree:
-                    <input id="degree" name="degree" value={degree} onChange={this.handleChange} />
-                </label>
+                <div>
+                    <input id="institute" name="institute" type="text" value={institute} onChange={this.handleChange} placeholder="Institute" />
+                    <input id="degree" name="degree" type="text" value={degree} onChange={this.handleChange} placeholder="Degree" />
+                </div>
                 <button type="submit">Submit</button>
             </form>
         );

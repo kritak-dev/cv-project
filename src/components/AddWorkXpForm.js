@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uniqid from 'uniqid';
+import '../App.css'
 
 class AddWorkXpForm extends Component {
     constructor(props) {
@@ -38,24 +39,22 @@ class AddWorkXpForm extends Component {
 
         const workExperienceForm = (
             <form onSubmit={this.handleSubmit}>
-                <label htmlFor="company">
-                    Company: <input id="company" type="text" name="company" value={company} onChange={this.handleChange} />
-                </label>
-                <label htmlFor="designation">
-                    Designation: <input id="designation" type="text" name="designation" value={designation} onChange={this.handleChange} />
-                </label>
+                <div>
+                    <input id="company" type="text" name="company" value={company} onChange={this.handleChange} />
+                    <input id="designation" type="text" name="designation" value={designation} onChange={this.handleChange} />
                 {/*<label htmlFor="startDate">
                     From: <input id="startDate" type="date" name="from" value={from} onChange={this.handleChange} required />
                 </label>
                 <label htmlFor="endDate">
                     To: <input id="endDate" type="date" name="to" value={to} onChange={this.handleChange} required />
                 </label>*/}
+                </div>
                 <button>Submit</button>
             </form>
         );
 
         return (
-            <div>
+            <div className="align-center">
                 {workExperienceForm}
             </div>
         )

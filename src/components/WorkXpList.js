@@ -64,10 +64,11 @@ class WorkXpList extends Component {
         });
 
         return (
-            <div>
+            <div className="align-center">
+                <h2>Work Experience</h2>
                 { dispWorkXpList }
                 {
-                    openAddForm ? <AddWorkXpForm handleSubmit={this.handleSubmit} /> : <AddButton handleAddButton={this.handleAddButton} />
+                    openAddForm ? <AddWorkXpForm handleSubmit={this.handleSubmit} /> : <AddButton title="Add Work Experience" handleAddButton={this.handleAddButton} />
                 }
             </div>
         );

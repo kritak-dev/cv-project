@@ -1,26 +1,14 @@
-/*h2 {
-    text-align: center;
-}
-
-.form-container{
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+.app-container {
+    background-color: aliceblue;
+    width: 800px;
+    position: absolute;
+    display: block;
     left: 25%;
+    border: aqua solid 1px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family:'Courier New', Courier, monospace
 }
-
-.form-ele-container{
-    display: flex;
-    justify-content: space-between;
-}
-
-.button-style{
-    width: 100px;
-    height: 30px;
-    position: relative;
-    left: 25%;
-}*/
 
 *, *:before, *:after {
     box-sizing: border-box;
@@ -45,7 +33,7 @@ button {
   color:#fff;
   font-weight:600;
   border-radius:5px;
-  width:50%;
+  width:20%;
 }
 
 button:hover {
